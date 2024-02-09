@@ -5,31 +5,16 @@
  */
 """
 
-
-import time
-def esPrimo(num):
-    
-    if num <= 2:
+def is_Prime(number):
+    if number < 2:
         return False
-    for i in range(4, int(num/2) + 1):
-        if num % i == 0:
+
+    for i in range(2, int(number/2) + 1):
+        if number % i == 0:
             return False
     return True
 
 
-# Guarda el tiempo de inicio
-inicio_tiempo = time.time()
-
-# Tu código aquí
 for i in range(1, 101):
-    if esPrimo(i):
+    if is_Prime(i):
         print(i)
-
-# Guarda el tiempo de finalización
-fin_tiempo = time.time()
-
-# Calcula el tiempo transcurrido
-tiempo_transcurrido = fin_tiempo - inicio_tiempo
-
-# Imprime el tiempo transcurrido
-print(f"\nTiempo transcurrido: {tiempo_transcurrido} segundos")

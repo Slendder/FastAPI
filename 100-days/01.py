@@ -7,6 +7,7 @@
  * - Múltiplos de 3 y de 5 a la vez por la palabra "fizzbuzz".
 """
 
+
 def FizzBuzz():
     for i in range(1, 101):
         if i % 3 == 0 and i % 5 == 0:
@@ -17,4 +18,6 @@ def FizzBuzz():
             print("buzz")
         else:
             print(i)
+
+
 FizzBuzz()

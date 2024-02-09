@@ -8,12 +8,16 @@
  */
 """
 
-fibonacci = []
 
-for i in range(50):
-    if i <= 1:
-        num = i
+def fibonacci(n):
+    if n <= 0:
+        return 0
+    elif n == 1:
+        return 1
     else:
-        num = fibonacci[i-1] + fibonacci[i-2]
-    print(num)
-    fibonacci.append(num)
+        return fibonacci(n - 1) + fibonacci(n - 2)
+
+
+# Imprimir los primeros 50 números de la sucesión de Fibonacci
+for i in range(50):
+    print(fibonacci(i))

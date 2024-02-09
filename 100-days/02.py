@@ -7,13 +7,8 @@
  * - Dos palabras exactamente iguales no son anagrama.
 """
 def AnagramDetector(str1, str2):
-    if str1 == str2[::-1]:
-        return True
-    elif  len(str1) != len(str2):
+    if str1.lower() == str2.lower():
         return False
-    for i in str2:
-        if i not in str1:
-            return False
-    return True
+    return sorted(str1.lower()) == sorted(str2.lower())  # Ordenamos ambos strings y comparamos si son iguales
 
 print(AnagramDetector("listen", "silent")) 
