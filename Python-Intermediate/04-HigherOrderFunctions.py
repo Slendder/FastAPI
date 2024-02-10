@@ -1,5 +1,8 @@
 ### Higher-Order-Functions ###
 
+from functools import reduce
+
+
 def sum_one(value):
     return value + 1
 
@@ -31,7 +34,7 @@ print(sum_ten(-10)(5))
 
 ### Built-in Higher-Order-Functions ###
 
-number = list(range(1, 81))
+number = list(range(1, 20))
 
 # Map
 
@@ -40,11 +43,27 @@ def multiply_two(number):
     return number * 2
 
 
+# Multiply all numbers by two using map()
 print(list(map(lambda number: number * 2, number)))
 print(list(map(multiply_two, number)))
 
 
 # Filter
 
-def filter_greater_that_ten(value):
-    
+def filter_greater_than_ten(value):
+    return value >= 10
+
+
+# Demands a boolean function
+print(list(filter(filter_greater_than_ten, number)))
+print(list(filter(lambda value: value >= 10, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])))
+
+# Reduce
+
+
+def sum_two_values(first_value, second_value):
+    return first_value + second_value
+
+
+print(reduce(sum_two_values, number))
+print(reduce(lambda first_value, second_value: first_value + second_value, number))
