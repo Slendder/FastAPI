@@ -1,0 +1,17 @@
+{
+    "Name": "Bautista",
+    "Surname": "Prieto",
+    "Age": 15,
+    "Skills": {
+        "Frontend": [
+            "JavaScript",
+            "CSS",
+            "HTML",
+            "React"
+        ],
+        "Backend": [
+            "Python",
+            "Rust"
+        ]
+    }
+}

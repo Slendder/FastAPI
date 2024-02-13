@@ -1,5 +1,9 @@
 ### File Handling ###
 
+# Clase en vídeo: https://youtu.be/TbcEqkabAWU?t=15524
+
+import xml
+import csv
 import json
 import os
 
@@ -45,4 +49,57 @@ json_test = {
     }
 }
 
-json.dump(json_test, json_file)
+json.dump(json_test, json_file, indent=4)
+
+json_file.close()
+
+with open("Intermediate/my_file.json") as my_other_file:
+    for line in my_other_file.readlines():
+        print(line)
+
+json_dict = json.load(open("Intermediate/my_file.json"))
+print(json_dict)
+print(type(json_dict))
+
+# .csv file
+
+csv_file = open("Intermediate/myCSV.csv", "w+")
+
+json_test = {
+    "Name": "Bautista",
+    "Surname": "Prieto",
+    "Age": 15,
+    "Skills": {
+        "Frontend": [
+            "JavaScript",
+            "CSS",
+            "HTML",
+            "React",
+        ],
+        "Backend": [
+            "Python",
+            "Rust"
+        ],
+    }
+}
+
+csv_writer = csv.writer(csv_file)
+
+csv_writer.writerow(['Name', 'Surname', 'Age'])
+csv_writer.writerow(['Bautista', 'Prieto', '15'])
+csv_writer.writerows(zip(json_test['Skills'].keys(), zip(*[json_test['Skills'][skill] for skill in json_test['Skills']])))  
+data = json_test['Skills']
+for skill in data:
+    skills = data[skill]
+
+csv_file.close()
+
+
+
+with open("Intermediate/myCSV.csv") as my_other_file:
+    for line in my_other_file.readlines():
+        print(line)
+
+# .xlsx file Install module!
+
+# .xml file
