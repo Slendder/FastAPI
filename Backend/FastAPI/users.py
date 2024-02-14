@@ -3,9 +3,9 @@ from pydantic import BaseModel
 
 app = FastAPI()
 
-# Inicia el server: uvicorn users:app --reload
+# Start the server: uvicorn users:app --reload
 
-# Entidad User
+# User Entity
 
 
 class User(BaseModel):
@@ -18,11 +18,11 @@ class User(BaseModel):
 users_list = [
     User(id=1, name="Bautista", surname="Prieto", age=15),
     User(id=2, name="Tomas", surname="Gonzalez", age=21),
-    User(id=3, name="Lorenzo", surname="BuenaNueva", age=19),
+    User(id=3, name="Lorenzo", surname="GoodNews", age=19),
 ]
 
 
-@app.get("/usersjson")
+@app.get("/users_json")
 async def usersJson():
     return [
         {
