@@ -1,5 +1,4 @@
 from fastapi import FastAPI
-
 app = FastAPI()
 
 # Start the server: uvicorn main:app --reload
